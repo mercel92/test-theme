@@ -1,0 +1,6 @@
+@import "setting.scss";
+@include BLOCK {
+    option[disabled] {
+        color: #ddd;
+    }
+}

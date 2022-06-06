@@ -1,0 +1,25 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    .image-wrapper {
+        padding-bottom: 67%;
+    }
+    .blog-description {
+        @include line-clamp(3);
+        min-height: 50px;
+        font-size: 11px;
+        @media (min-width:$mdScreen) {
+            font-size: 13px;
+        }
+    }
+    .blog-title {
+        a {
+            @include line-clamp(2);
+            min-height: 34px;
+            font-size: 15px;
+            @media (min-width:$mdScreen) {
+                font-size: 18px;
+            }
+        }
+    }
+}

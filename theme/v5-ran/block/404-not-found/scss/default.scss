@@ -1,0 +1,30 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    h1 {
+        font-size: 22px;
+        @media (min-width:$mdScreen) {
+            font-size: 28px;
+        }
+    }
+    p {
+        font-size: 14px;
+        @media (min-width:$mdScreen) {
+            font-size: 18px;
+        }
+    }
+    .btn {
+        width: 180px;
+        max-width: 100%;
+        font-size: 14px;
+        @media (min-width:$mdScreen) {
+            font-size: 18px;
+            width: 320px;
+        }
+    }
+    img {
+        @media (max-width:($mdScreen - 1)) {
+            max-width: 100px;
+        }
+    }
+}

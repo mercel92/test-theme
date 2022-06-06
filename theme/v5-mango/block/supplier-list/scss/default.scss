@@ -1,0 +1,80 @@
+@import "setting.scss";
+@include BLOCK {
+    .letter-item-titles {
+        a {
+            height: 35px;
+            line-height: 35px;
+            font-size: 14px;
+            color: #8c8c8c;
+            border: 1px solid transparent;
+            &.active,
+            &:hover {
+                color: $textPrimary;
+                border-color: $textPrimary;
+            }
+        }
+    }
+    .data-list-item {
+        a {
+            font-size: 14px;
+            word-break: break-word;
+        }
+    }
+    @media (min-width: $mdScreen) {
+        .row-5 {
+            margin-left: -5px;
+            margin-right: -5px;
+        }
+        .letter-item-titles {
+            .p-1 {
+                padding: 5px;
+            }
+        }
+        .letter-stikcy {
+            top: 16px;
+            margin-bottom: 16px;
+        }
+    }
+    @media (max-width: ($mdScreen - 1)) {
+        .letter-item-titles {
+            overflow-y: hidden;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+            flex-wrap: inherit;
+            margin-bottom: 14px;
+            &>div:first-child {
+                padding-left: 0;
+            }
+            a {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+            }
+        }
+        .letter-item-titles {
+            .p-1 {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+        .letter-stikcy {
+            margin-bottom: 0;
+        }
+        &:not([dir="rtl"]) {
+            .letter-item-titles {
+                margin-left: 0;
+                &>div:first-child {
+                    padding-left: 0;
+                }
+            }
+        }
+        &[dir="rtl"] {
+            .letter-item-titles {
+                margin-right: 0;
+                &>div:first-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}

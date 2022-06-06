@@ -1,0 +1,21 @@
+@import "setting.scss";
+@include BLOCK {
+    #shopping-list-popup {
+        :checked + .shopping-list-select {
+            border-color:$borderPrimary !important;
+        }
+        .shopping-list-select {
+            padding: 8px;
+        }
+        .mt-8 {
+            margin-top: 8px;
+        }
+        .py-8 {
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+        .shopping-list-title {
+            font-size: 18px;
+        }
+    }
+}

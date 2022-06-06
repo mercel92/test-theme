@@ -1,0 +1,45 @@
+@import "setting.scss";
+@include BLOCK {
+    .breadcrumb {
+        ul {
+            li {
+                height: 18px;
+                a {
+                    font-size: 12px;
+                    line-height: 1;
+                    i.ti-homepage{
+                        font-size: 13px;
+                        margin-right: 5px;
+                    }
+                }
+                &+li::before {
+                    content: "\e808";
+                    display: block;
+                    color: $textPrimary;
+                    font: normal normal normal 30px/1 "tsoft-icon";
+                    font-size: inherit;
+                    text-rendering: auto;
+                    line-height: inherit;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    margin-left: $gridPadding / 2;
+                    margin-right: $gridPadding / 2;
+                }
+            }
+        }
+    }
+    &[dir="rtl"] {
+        .breadcrumb {
+            ul {
+                li {
+                    a {
+                        i.ti-homepage{
+                            margin-right: 0;
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

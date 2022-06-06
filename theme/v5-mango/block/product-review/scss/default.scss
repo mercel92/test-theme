@@ -1,0 +1,35 @@
+@import "setting.scss";
+@include BLOCK {
+    .comment-cart {
+        font-size: 25px;
+        margin-left: 5px;
+    }
+    .comment-star {
+        i {
+            font-size: 14px;
+        }
+        .comment-star-primary {
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            height: 100%;
+        }
+    }
+    @media (max-width: ($mdScreen - 1)) {
+        .comment-md-border-right {
+            border: 0 !important;
+        }
+    }
+    &[dir="rtl"] {
+        .comment-cart {
+            margin-left: 0;
+            margin-right: 5px;
+        }
+        .comment-star {
+            .comment-star-primary {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+}

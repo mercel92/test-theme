@@ -1,0 +1,59 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    .header-cart-item {
+        .cp-brand {
+            font-size: 15px;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .cp-title {
+            font-size: 15px;
+            @include line-clamp;
+        }
+        .price-discount {
+            font-size: 15px;
+            & + .price-sell {
+                color: $textPrimary !important;
+            }
+        }
+        .price-sell {
+            font-size: 18px;
+        }
+        .header-cart-buttons {
+            a {
+                i {
+                    font-size: 15px;
+                }
+            }
+        }
+        .qty {
+            display: flex;
+            span[class*="ti-"] {
+                width: 50px;
+                position: relative;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                font-size: 15px;
+                flex-shrink: 0;
+                height: 40px;
+                color: $textColor;
+                transform: none;
+            }
+            input {
+                border: 0;
+                height: 40px;
+                font-size: 15px;
+            }
+        }
+        .fav-added {
+            color: $textPrimary;
+        }
+    }
+    .header-cart-price-line {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+}

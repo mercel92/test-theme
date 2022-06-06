@@ -1,0 +1,202 @@
+@import "setting";
+@import "mixin";
+@include BLOCK {
+    .filter-title,
+    .filter-item {
+        line-height: 15px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        margin: 0;
+    }
+    .filter-body {
+        margin-top: 10px;
+        .filter-list {
+            max-height: 223px;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                width: 2px;
+                height: 2px;
+            }
+            .filter-item {
+                color: #747474;
+                font-size: 12px;
+                display: block;
+                margin: 0;
+                font-weight: normal;
+                transition: none;
+                &:hover {
+                    color: $textPrimary;
+                }
+            }
+        }
+        .filter-list-color {
+            .filter-list-item {
+                width: 30px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+                .image-wrapper {
+                    padding-bottom: 100% !important;
+                    box-sizing: content-box;
+                }
+                .input-checkbox {
+                    position: absolute !important;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin: auto !important;
+                }
+            }
+        }
+        .filter-list-shape {
+            .filter-list-item {
+                width: 50px;
+                margin-right: 10px;
+                .filter-shape {
+                    .image-wrapper {
+                        padding-bottom: 100% !important;
+                        box-sizing: content-box;
+                    }
+                    .shape-name {
+                        font-size: 10px;
+                        margin-top: 10px;
+                        color: #747474;
+                    }
+                    &.shape-checked,
+                    &:hover {
+                        .image-wrapper {
+                            border-color: $textColor !important;
+                        }
+                    }
+                }
+            }
+        }
+        .selected-item {
+            background-color: #f6f6f6;
+            color: #747474;
+            font-size: 10px;
+            padding: 5px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            &:hover {
+                color: $textBlack;
+            }
+        }
+    }
+    .filter-search {
+        &::before {
+            position: absolute;
+            right: 5px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            height: 14px;
+            width: 14px;
+            color: $textLight;
+            line-height: 1;
+        }
+        input {
+            font-size: 12px;
+            padding-left: 10px;
+            padding-right: 22px;
+            &::-webkit-input-placeholder {
+                font-style: italic;
+                font-weight: 300;
+            }
+            &:-ms-input-placeholder {
+                font-style: italic;
+                font-weight: 300;
+            }
+            &::placeholder {
+                font-style: italic;
+                font-weight: 300;
+            }
+        }
+    }
+    @media (min-width: $mdScreen) {
+        .filter-card {
+            padding: $gridPadding;
+            border: 2px solid #f6f6f6;
+            border-radius: 4px;
+        }
+        .filter-title {
+            color: $textColor;
+            font-size: 14px;
+            font-weight: bold;
+            display: block;
+        }
+    }
+    @media (max-width: ($mdScreen - 1)) {
+        .filter-card {
+            &.single-option {
+                padding: 10px;
+                border: 2px solid #f6f6f6;
+                border-radius: 4px;
+            }
+        }
+        .filter-title {
+            color: #000;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 18px;
+            display: block;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $borderLight;
+            position: relative;
+            &::before {
+                content: '';
+                background-color: $bgPrimary;
+                width: 30px;
+                height: 3px;
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 0;
+            }
+        }
+        &[dir="rtl"] {
+            .filter-title {
+                &::before {
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
+    #filter-price-slider-min-price,
+    #filter-price-slider-max-price,
+    .filter-decimal-body input {
+        padding-left: 3px;
+        padding-right: 3px;
+        text-align: center;
+        font-size: 12px;
+    }
+    &[dir="rtl"] {
+        .filter-body {
+            .filter-list-color {
+                .filter-list-item {
+                    margin-right: 0;
+                    margin-left: 10px;
+                }
+            }
+            .filter-list-shape {
+                .filter-list-item {
+                    margin-right: 0;
+                    margin-left: 10px;
+                }
+            }
+        }
+        .filter-search {
+            &::before {
+                right: auto;
+                left: 5px;
+            }
+            input {
+                padding-left: 22px;
+                padding-right: 10px;
+            }
+        }
+    }
+}

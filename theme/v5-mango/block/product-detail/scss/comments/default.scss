@@ -1,0 +1,125 @@
+@import "setting.scss";
+@include BLOCK {
+    #product-comments {
+        i.ti-comment-multiple {
+            font-size: 90px;
+        }
+        .comment-average {
+            color: $textColor;
+            margin-left: 40px;
+            strong {
+                font-size: 18px;
+            }
+        }
+    }
+    .star-average {
+        font-size: 12px;
+        line-height: 30px;
+        li {
+            strong {
+                padding-right: 7px;
+            }
+        }
+    }
+    .progress-bar {
+        width: 100px;
+        height: 7px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .comment-item {
+        .comment-avatar {
+            background-color: #f6f6f6;
+            color: $textColor;
+            font-size: 45px;
+            font-weight: 900;
+            width: 120px;
+            height: 120px;
+        }
+        .comment-info {
+            color: $textColor;
+            font-size: 12px;
+            width: calc(100% - 120px);
+            padding-left: $gridPadding;
+            &>div+div {
+                margin-top: 6px;
+            }
+        }
+        .comment-star {
+            .rate {
+                font-size: 21px;
+                line-height: 1;
+                margin-bottom: 6px;
+            }
+        }
+        .vote-buttons {
+            i {
+                font-size: 24px;
+            }
+            a {
+                &.yes-btn:hover {
+                    color: $textSuccess !important;
+                }
+                &.no-btn:hover {
+                    color: $textDanger !important;
+                }
+            }
+        }
+        .purchased {
+            padding-top: 4px;
+            padding-bottom: 4px;
+            font-size: 12px;
+        }
+    }
+    .comment-wrapper {
+        .pagination {
+            .selected {
+                color: $textPrimary;
+                box-shadow: 0px 0px 0px 1px $textPrimary;
+            }
+        }
+    }
+    @media (max-width: ($smScreen - 1)) {
+        #product-comments {
+            i.ti-comment-multiple {
+                font-size: 45px;
+            }
+            .vote-buttons {
+                font-size: 11px;
+                button {
+                    padding: 8px 0;
+                    font-size: inherit;
+                }
+            }
+            .comment-item {
+                .comment-avatar {
+                    width: 80px;
+                    height: 80px;
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+    &[dir="rtl"] {
+        #product-comments {
+            .comment-average {
+                margin-left: 0;
+                margin-right: 40px;
+            }
+        }
+        .star-average {
+            li {
+                strong {
+                    padding-right: 0;
+                    padding-left: 7px;
+                }
+            }
+        }
+        .comment-item {
+            .comment-info {
+                padding-left: 0;
+                padding-right: $gridPadding;
+            }
+        }
+    }
+}

@@ -1,0 +1,86 @@
+@import "setting.scss";
+@include BLOCK {
+    .news-date {
+        margin-bottom: 5px;
+        i {
+            margin-right: 4px;
+            font-size: 15px;
+        }
+    }
+    .news-back-button {
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+    .share-buttons { 
+        a { 
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &.facebook { 
+                color:#4867aa;
+            }
+            &.twitter { 
+                color:#00aced;
+            }
+            &.pinterest { 
+                color:#e61f23;
+            }
+            &.linkedin { 
+                color:#0274b3;
+            }
+            &.reddit { 
+                color:#f74300;
+            }
+            &.whatsapp { 
+                color:#1ad03f;
+            }
+            &:hover {
+                background: #f9f9f9;
+            }
+            i {
+                font-size: 20px;
+            }
+        }
+    }
+    @media (min-width: $mdScreen) {
+        .news-back-button {
+            position: absolute;
+            top: -30px;
+            right: 15px;
+            line-height: 0.8;
+            padding: 12px 12px;
+            width: auto;
+        }
+        .news-date { 
+            position: absolute;
+            right: 10px;
+            top: -20px;
+            margin:0;
+        }
+        &[dir="rtl"] {
+            .news-back-button {
+                right: auto;
+                left: 15px;
+            }
+            .news-date { 
+                right: auto;
+                left: 10px;
+            }
+        }
+    }
+    &[dir="rtl"] {
+        .news-date {
+            i {
+                margin-right: 0;
+                margin-left: 4px;
+            }
+        }
+        .news-back-button {
+            right: auto;
+            left: 0;
+        }
+    }
+}

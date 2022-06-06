@@ -1,0 +1,78 @@
+@import "setting.scss";
+@include BLOCK {
+    #footer-top {
+        .h5 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            @media (min-width:$mdScreen) {
+                font-size: 28px;
+            }
+        }
+        p {
+            font-size: 13px;
+            @media (min-width:$mdScreen) {
+                font-size: 18px;
+            }
+        }
+        input[type="email"] {
+            height: 46px;
+            @media (min-width:$mdScreen) {
+                height: 56px;
+            }
+        }
+        button[type="submit"] {
+            position: absolute;
+            font-size: 15px;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        #footer-social-list {
+            a {
+                width: 45px;
+                height: 45px;
+                font-size: 16px;
+                &:hover {
+                    background-color: $bgPrimary !important;
+                    border-color: $bgPrimary !important;
+                    color: $textWhite !important;
+                }
+            }
+        }
+        [dir="rtl"] & {
+            button[type="submit"] {
+                right: auto;
+                left: 0;
+            }
+        }
+    }
+    #footer-main {
+        #footer-menu {
+            .menu-item {
+                &-title {
+                    font-size: 18px;
+                    @media (max-width:($mdScreen - 1)) {
+                        &.active .ti-plus,
+                        &:not(.active) .ti-minus {
+                            display: none;
+                        }
+                        &+.menu-item-children:not(.show) {
+                            display: none;
+                        }
+                    }
+                }
+                &-children {
+                    .menu-link {
+                        color: $textGray;
+                        padding: 5px 0;
+                        display: block;
+                        &:hover {
+                            color: $textPrimary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

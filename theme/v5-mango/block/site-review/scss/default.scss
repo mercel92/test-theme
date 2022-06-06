@@ -1,0 +1,104 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    .comments-list {
+        .mb-8 {
+            margin-bottom: 8px;
+        }
+        .comment-rate {
+            font-size: 21px;
+        }
+        .comment-avatar {
+            background-color: $bgLight;
+            font-size: 45px;
+            font-weight: 900;
+            width: 120px;
+            height: 120px;
+            overflow: hidden;
+        }
+        .comment-info {
+            width: calc(100% - 120px);
+            padding-left: 25px;
+        }
+        .comment-more {
+            line-height: 18px;
+            min-height: 54px;
+        }
+        .comment-description {
+            @include line-clamp(3);
+        }
+        .comment-star {
+            i {
+                font-size: 14px;
+            }
+            .comment-star-primary {
+                left: 0;
+                top: 0;
+                overflow: hidden;
+                height: 100%;
+            }
+        }
+        .vote-buttons {
+            div {
+                a {
+                    font-size: 12px;
+                }
+                button {
+                    font-size: 12px;
+                }
+                i {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    @media (max-width: ($mdScreen - 1)) {
+        .comments-list {
+            .comment-avatar {
+                font-size: 20px;
+                width: 80px;
+                height: 80px;
+            }
+            .comment-info {
+                width: calc(100% - 80px);
+                padding-left: 15px;
+            }
+            .vote-buttons {
+                font-size: 12px;
+                div {
+                    a {
+                        padding: 8px;
+                    }
+                    button {
+                        padding: 8px;
+                    }
+                    i {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+        &[dir="rtl"] {
+            .comments-list {
+                .comment-info {
+                    padding-left: 0;
+                    padding-right: 15px;
+                }
+            }
+        }
+    }
+    &[dir="rtl"] {
+        .comments-list {
+            .comment-info {
+                padding-left: 0;
+                padding-right: 25px;
+            }
+            .comment-star {
+                .comment-star-primary {
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
+}

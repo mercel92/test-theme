@@ -1,0 +1,48 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    h1 {
+        color: $textColor;
+        font-size: 21px;
+        margin-bottom: 0;
+    }
+    .member-menu-icon {
+        background-color: #d8d8d8;
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 100%;
+    }
+    .p-10px {
+        padding: 10px;
+    }
+    .code-clone {
+        >span {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+    @media screen and (max-width: ($mdScreen - 1)) {
+        .coupon-item {
+            .accordion-title {
+                @include d-flex;
+                @include justify-content-between;
+                &:not(.active) .icon-wrapper .ti-arrow-up,
+                &.active .icon-wrapper .ti-arrow-down{
+                    display: none;
+                }
+                .icon-wrapper {
+                    font-size: 20px;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+    &[dir="rtl"] {
+        .member-menu-icon {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+    }
+}

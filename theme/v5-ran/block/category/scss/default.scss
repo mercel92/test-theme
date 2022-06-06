@@ -1,0 +1,14 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    .block-title {
+        font-size: 18px;
+    }
+    .btn {
+        font-size: 12px;
+        padding: 18px 15px;
+        @media (min-width:$mdScreen) {
+            font-size: 15px;
+        }
+    }
+}

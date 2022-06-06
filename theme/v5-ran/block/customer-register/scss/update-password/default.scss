@@ -1,0 +1,22 @@
+#modal-update-password {
+    pointer-events: none;
+}
+
+#modal-update-password .t-modal-content {
+    pointer-events: all;
+}
+
+#modal-update-password .t-modal-content:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#update-password {
+    position: relative;
+    z-index: 3;
+}

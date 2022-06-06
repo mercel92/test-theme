@@ -1,0 +1,21 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    .news-description {
+        @include line-clamp(3);
+        min-height: 50px;
+    }
+    .news-title {
+        @include line-clamp(2);
+        min-height: 34px;
+    }
+    .mr-5 {
+        margin-right: 5px;
+    }
+    &[dir="rtl"] {
+        .mr-5 {
+            margin-right: 0;
+            margin-left: 5px;
+        }
+    }
+}

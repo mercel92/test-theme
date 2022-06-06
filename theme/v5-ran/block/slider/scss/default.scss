@@ -1,0 +1,23 @@
+@import "setting.scss";
+@include BLOCK {
+    .thumb-item {
+        padding: 2px;
+        border-width: 2px !important;
+        cursor: pointer;
+    }
+    .swiper-slide-thumb-active {
+        .thumb-item {
+            border-color: $borderPrimary !important;
+        }
+    }
+    .container & {
+        .slider-padding {
+            padding-left: $mobileGridPadding;
+            padding-right: $mobileGridPadding;
+            @media (min-width:$mdScreen) {
+                padding-left: $gridPadding;
+                padding-right: $gridPadding;
+            }
+        }
+    }
+}

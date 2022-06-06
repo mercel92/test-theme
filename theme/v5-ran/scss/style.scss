@@ -1,0 +1,467 @@
+@import "setting.scss";
+@import "mixin.scss";
+
+.fs-1 {
+    font-size: calc(1.375rem + 1.5vw)!important;
+ }
+ .fs-2 {
+    font-size: calc(1.325rem + .9vw)!important;
+ }
+ .fs-3 {
+    font-size: calc(1.3rem + .6vw)!important;
+ }
+ .fs-4 {
+    font-size: calc(1.275rem + .3vw)!important;
+ }
+ .fs-5 {
+    font-size: 1.25rem!important;
+ }
+ .fs-6 {
+    font-size: 1rem!important;
+ }
+
+body.drawer-animated{
+    &.drawer-right-active{
+        transform: translate3d(-100%, 0, 0);
+    }
+    &.drawer-left-active{
+        transform: translate3d(100%, 0, 0);
+    }
+    @media (min-width:$mdScreen) {
+        &.drawer-right-active{
+            transform: translate3d(-100%, 0, 0);
+        }
+        &.drawer-left-active{
+            transform: translate3d(100%, 0, 0);
+        }
+    }
+}
+
+[dir="rtl"] body.drawer-animated{
+    &.drawer-right-active{
+        transform: translate3d(100%, 0, 0);
+    }
+    &.drawer-left-active{
+        transform: translate3d(-100%, 0, 0);
+    }
+    @media (min-width:$mdScreen) {
+        &.drawer-right-active{
+            transform: translate3d(100%, 0, 0);
+        }
+        &.drawer-left-active{
+            transform: translate3d(-100%, 0, 0);
+        }
+    }
+}
+
+.drawer-wrapper {
+    background-color: #FFF;
+    width: 100%;
+    z-index: 81;
+    padding-bottom: 60px;
+    &::-webkit-scrollbar {
+        @include scrollbar(3px, 3px, $bgLight);
+    }
+    &::-webkit-scrollbar-button {
+        display: none;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $bgPrimary;
+    }
+    &[data-position="left"]:not([data-display="push"]){
+        border-right: 1px solid $borderSecondary;
+    }
+    &[data-position="right"]:not([data-display="push"]){
+        border-left: 1px solid $borderSecondary;
+    }
+    &:not([data-position="right"]){
+        left: -100%;
+    }
+    &[data-position="right"]{
+        right: -100%;
+    }
+    .drawer-title {
+        @include d-flex;
+        @include align-items-center;
+        font-size: 18px;
+        font-weight: bold;
+        color: $textColor;
+        padding: 30px 15px;
+        .drawer-close {
+            cursor: pointer;
+            margin-left: auto;
+            i {
+                font-size: 14px;
+            }
+        }
+    }
+    .drawer-body {
+        padding: 15px;
+        padding-top: 0 !important;
+        overflow-x: hidden;
+        &::-webkit-scrollbar {
+            @include scrollbar(3px, 3px, $bgLight);
+        }
+        &::-webkit-scrollbar-button {
+            display: none;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $bgPrimary;
+        }
+    }
+    @media (min-width:$mdScreen) {
+        width: 375px;
+        &:not([data-position="right"]){
+            left: -375px;
+        }
+        &[data-position="right"]{
+            right: -375px;
+        }
+        .drawer-title {
+            font-size: 28px;
+            padding: 30px;
+            .drawer-close {
+                i {
+                    font-size: 18px;
+                }
+            }
+        }
+        .drawer-body {
+            padding: 30px;
+        }
+    }
+}
+
+[dir="rtl"] .drawer-wrapper {
+    &[data-position="left"]:not([data-display="push"]){
+        border-left: 1px solid $borderSecondary;
+    }
+    &[data-position="right"]:not([data-display="push"]){
+        border-right: 1px solid $borderSecondary;
+    }
+    &:not([data-position="right"]){
+        left:auto;
+        right: -100%;
+    }
+    &[data-position="right"]{
+        right: auto;
+        left: -100%;
+    }
+    .drawer-title {
+        .drawer-close {
+            margin-left: 0;
+            margin-right: auto;
+        }
+    }
+    @media (min-width:$mdScreen) {
+        &:not([data-position="right"]){
+            left:auto;
+            right: -375px;
+        }
+        &[data-position="right"]{
+            right: auto;
+            left: -375px;
+        }
+    }
+}
+
+.drawer-overlay{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: $mdScreen) {
+    .drawer-overlay{
+        background-color: transparent;
+    }
+}
+
+.block-title {
+    color: $headingColor;
+    font-size: 22px;
+    font-weight: 700;
+    &:not(.no-line)::after{
+        content: '';
+        background-color: $bgPrimary;
+        width: 30px;
+        height: 3px;
+        display: block;
+        border-radius: 1.5px;
+        margin-top: 10px;
+    }
+    @media (min-width:$mdScreen) {
+        font-size: 28px;
+
+    }
+}
+
+.swiper-pagination {
+    width: 100%;
+    text-align: center;
+    padding: $mobileGridPadding;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (min-width:$mdScreen) {
+        padding: $gridPadding; 
+    }
+    .swiper-pagination-bullet{
+        width: 10px;
+        height: 3px;
+        border-radius: 2px;
+        background-color: #ececec;
+        margin: 0 5px;
+        display: inline-block;
+        @include transitionEase;
+    }
+    .swiper-pagination-bullet-active{
+        background-color: $bgPrimary;
+        width: 25px;
+    }
+    &.swiper-pagination-progressbar {
+        padding: 0;
+        min-height: auto;
+        background: $bgLight;
+        .swiper-pagination-progressbar-fill {
+            background: $bgPrimary;
+        }
+    }
+    &.swiper-pagination-custom {
+        .swiper-pagination-customs {
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            border-radius: 100%;
+            margin-left: 2px;
+            margin-right: 2px;
+            display: inline-block;
+            vertical-align: middle;
+            background-color: $bgLight;
+            color: $textColor;
+            font-size: 10px;
+        }
+        .swiper-pagination-customs-active {
+            background-color: $bgPrimary;
+            color: $textWhite;
+        }
+    }
+    * {
+        outline: 0;
+    }
+}
+
+@media (min-width: $mdScreen) {
+    .swiper-pagination:not(.bottom){
+        position: absolute;
+        left: 0;
+        bottom: $gridPadding;
+        z-index: 2;
+    }
+    [dir="rtl"] .swiper-pagination:not(.bottom){
+        left: auto;
+        right: 0;
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next{
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    @include transitionEase;
+    color: $textWhite;
+    line-height: 1;
+    &:hover{
+        background-color: $bgSecondary;
+    }
+}
+
+.swiper-button-prev {
+    left: 0;
+    &.inside{
+        left: 15px;
+    }
+    &.outside{
+        left: -60px;
+    }
+}
+
+.swiper-button-next {
+    right: 0;
+    &.inside{
+        right: 15px;
+    }
+    &.outside{
+        right: -60px;
+    }
+}
+
+@media (max-width: ($xlScreen + 100)) {
+    .slider-block-wrapper {
+        overflow: hidden;
+    }
+    .swiper-button-prev.outside {
+        left: -15px;
+        i {
+            margin-right: -10px;
+        }
+    }
+    .swiper-button-next.outside {
+        right: -15px;
+        i {
+            margin-left: -10px;
+        }
+    }
+}
+
+.noUi-target {
+    background-color: $bgGray;
+    height: 2px;
+    margin-top: 25px;
+    .noUi-base {
+        width: calc(100% - 14px);
+    }
+    .noUi-origin {
+        background: $bgGray;
+        height: 100%;
+    }
+    .noUi-connect {
+        background-color: $bgPrimary;
+    }
+    .noUi-handle {
+        background-color: $bgPrimary;
+        width: 14px;
+        height: 14px;
+        top: 50%;
+        margin-top: -8px;
+        outline: 0 !important;
+        box-shadow: none !important;
+        cursor: pointer;
+    }
+}
+
+.pagination{
+    @include d-flex;
+    a, span{
+        height: 30px;
+        min-width: 30px;
+        padding: 0 5px;
+        border: 1px solid $borderSecondary;
+        background-color: $bgWhite;
+        @include d-inline-flex;
+        @include align-items-center;
+        @include justify-content-center;
+        margin-left: -1px;
+        i {
+            font-size: 18px;
+        }
+    }
+    a{
+        color: $textGray;
+        &.passive {
+            pointer-events: none;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+    }
+    a:hover, span{
+        background-color: $bgPrimary;
+        color: $textWhite;
+        border-color: $borderPrimary;
+    }
+    .first,
+    .last {
+        display: none !important;
+    }
+    .prev,
+    .next {
+        &.next {
+            margin-left: 10px;
+        }
+        &.prev {
+            margin-right: 10px;
+        }
+        border: 0;
+        border-radius: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        color: $textWhite;
+    }
+    [dir="rtl"] & {
+        .prev,
+        .next {
+            &.next {
+                margin-left: 0;
+                margin-right: 10px;
+            }
+            &.prev {
+                margin-right: 0;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.form-search {
+    input[type="search"] {
+        padding-right: 80px;
+    }
+    button[type="submit"] {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        z-index: 2;
+        font-size: 14px;
+    }
+}
+
+[dir="rtl"] .form-search {
+    input[type="search"] {
+        padding-left: 80px;
+    }
+    button[type="submit"] {
+        right: auto;
+        left: 5px;
+    }
+}
+
+.stars {
+    color: $textLight;
+    .stars-fill {
+        color: $textBlack;
+    }
+}
+
+.qty span[class*="ti-"] {
+    color: $textColor;
+    background: $bgLight;
+    height: calc(100% - 2px);
+    margin: 0 1px;
+    color: $textBlack;
+}
+
+@media (min-width:$mdScreen) {
+    .btn {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+input + .input-placeholder, textarea + .input-placeholder {
+    color: $textGray;
+}
+
+.form-control, .form-control.btn {
+    height: 40px;
+}
+
+.form-control.form-control-md, .form-control-md.form-control.btn {
+    height: 54px;
+}
+
+.form-control.form-control-lg, .form-control-lg.form-control.btn {
+    height: 64px;
+}

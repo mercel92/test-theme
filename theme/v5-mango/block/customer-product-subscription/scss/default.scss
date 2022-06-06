@@ -1,0 +1,63 @@
+@import "setting.scss";
+@include BLOCK {
+    h1 {
+        color: $textColor;
+        font-size: 21px;
+        margin-bottom: 0;
+        small {
+            font-size: 12px;
+            padding-top: 4px;
+        }
+    }
+    .member-menu-icon {
+        background-color: #d8d8d8;
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 100%;
+    }
+    .subs-list {
+        .subs-item {
+            font-size: 10px;
+            button,
+            a {
+                font-size: 10px;
+                i {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+    .subs-detail-list {
+        .subs-detail-item {
+            &:nth-child(odd) {
+                background: $bgLight;
+            }
+        }
+    }
+    .mt-8 {
+        margin-top: 8px;
+    }
+    @media (max-width: ($mdScreen - 1)) {
+        .subs-list {
+            .subs-item {
+                button {
+                    padding: 8px;
+                }
+            }
+        }
+        .subs-detail-list {
+            .subs-detail-item,
+            .subs-detail-head {
+                font-size: 11px;
+            }
+        }
+    }
+    &[dir="rtl"] {
+        .member-menu-icon {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+    }
+}

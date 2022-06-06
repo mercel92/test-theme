@@ -1,0 +1,42 @@
+@import "setting.scss";
+@include BLOCK {
+    .fs-18 {
+        font-size: 15px;
+    }
+    .store-map-canvas {
+        height: 350px;
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .swiper-button-prev {
+        left: 0;
+    }
+    .swiper-button-next {
+        right: 0;
+    }
+    .mr-5 {
+        margin-right: 5px;
+    }
+    .gm-style-iw.gm-style-iw-c {
+        padding: 14px !important;
+    }
+    .gm-style-iw-d {
+        overflow: auto !important;
+    }
+    @media (min-width: $mdScreen) {
+        .fs-18 {
+            font-size: 18px;
+        }
+        .store-map-canvas {
+            height: 550px;
+        }
+    }
+    &[dir="rtl"] {
+        .mr-5 {
+            margin-right: 0;
+            margin-left: 5px;
+        }
+    }
+}

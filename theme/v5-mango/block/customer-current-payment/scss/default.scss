@@ -1,0 +1,80 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    h1 {
+        color: $textColor;
+        font-size: 21px;
+        margin-bottom: 0;
+    }
+    .member-menu-icon {
+        background-color: #d8d8d8;
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 100%;
+    }
+    .page-title-wrapper {
+        top: 0;
+    }
+    .date-filtre {
+        padding-left: 8px;
+        padding-right: 8px;
+        i {
+            position: absolute;
+            right: 8px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            height: 10px;
+            line-height: 10px;
+            font-size: 10px;
+        }
+    }
+    .ti-print {
+        font-size: 18px;
+        margin-right: 8px;
+    }
+    .cp-table {
+        overflow-x: auto;
+        .cp-table-header,
+        .cp-table-body,
+        .cp-table-footer {
+            min-width: 920px;
+            font-size: 12px;
+            &>div {
+                padding: 8px;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                &.col-1 {
+                    flex-basis: 11%;
+                    max-width: 11%;
+                }
+                &.col-2 {
+                    flex-basis: 22%;
+                    max-width: 22%;
+                }
+            }
+            &.cp-table-body:nth-child(odd) {
+                background: $bgLight;
+            }
+        }
+    }
+    &[dir="rtl"] {
+        .member-menu-icon {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+        .date-filtre {
+            i {
+                right: auto;
+                left: 8px;
+            }
+        }
+        .ti-print {
+            margin-right: 0;
+            margin-left: 8px;
+        }
+    }
+}

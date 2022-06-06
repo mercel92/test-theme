@@ -1,0 +1,43 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    .blog-title {
+        font-size: 22px;
+        @media (min-width:$mdScreen) {
+            font-size: 28px;
+        }
+    }
+    .share-buttons {
+        a { 
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &.facebook { 
+                color:#4867aa;
+            }
+            &.twitter { 
+                color:#00aced;
+            }
+            &.pinterest { 
+                color:#e61f23;
+            }
+            &.linkedin { 
+                color:#0274b3;
+            }
+            &.reddit { 
+                color:#f74300;
+            }
+            &.whatsapp { 
+                color:#1ad03f;
+            }
+            &:hover {
+                background: #f9f9f9;
+            }
+            i {
+                font-size: 20px;
+            }
+        }
+    }
+}

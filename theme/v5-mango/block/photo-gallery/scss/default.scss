@@ -1,0 +1,16 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    .block-sticky {
+        position: sticky;
+        top: 10px;
+    }
+    .accordion-body {
+        a:hover{
+            color: $textPrimary !important;
+        }  
+    }   
+    .photo-title {
+        @include line-clamp(2);
+    }
+} 

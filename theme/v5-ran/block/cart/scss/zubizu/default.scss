@@ -1,0 +1,86 @@
+@import "setting.scss";
+@import "mixin.scss";
+
+@include BLOCK {
+    $bgZubizu : #ed2b6c;
+    #zubizu-container {
+        .zubizu-logo {
+            max-height: 40px;
+        }
+        .zubizu-text {
+            color: $bgZubizu;
+        }
+        .btn-zubizu {
+            color: $textWhite;
+            background-color: $bgZubizu;
+            border-color: $bgZubizu;
+            &:hover,
+            &:focus,
+            &.active {
+                background-color: darken($bgZubizu, 12%);
+                border-color: darken($bgZubizu, 12%);
+            }
+        }
+        .zubizu-campaign-list {
+            .campaign-item {
+                font-size: 12px;
+                .campaign-title {
+                    color: $textColor;
+                }
+                .campaign-description {
+                    color: $textGray;
+                    margin-top: 5px;
+                    @include line-clamp;
+                }
+                .select-cmp-label {
+                    font-size: 10px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+                input:not(.checked)+label {
+                    background-color: $bgLight;
+                }
+                input.checked+label {
+                    background-color: #f3fcf0;
+                    i {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: $smScreen) {
+        .zubizu-campaign-list {
+            .campaign-item {
+                .select-cmp-label {
+                    flex-direction: column;
+                    margin-bottom: 0;
+                    .input-checkbox {
+                        margin-right: 0;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+        &:not([dir="rtl"]) {
+            .pl-sm-0 {
+                padding-left: 0;
+            }
+        }
+        &[dir="rtl"] { 
+            .pl-sm-0 {
+                padding-right: 0;
+            }
+            .zubizu-campaign-list {
+                .campaign-item {
+                    .select-cmp-label {
+                        .input-checkbox {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

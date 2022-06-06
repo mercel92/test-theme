@@ -1,0 +1,52 @@
+@import 'setting.scss';
+@import 'mixin.scss';
+@include BLOCK {
+    .tab-nav {
+        a {
+            background-color: $bgLight;
+            color: $textColor;
+            font-size: 12px;
+            padding: 12px;
+        }
+        & .active a {
+            color: $textWhite;
+            background-color: $bgPrimary;
+        }
+    }
+    #swiper-prev-setStore,
+    #swiper-next-setStore {
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+        i {
+            margin: 0 !important;
+        }
+    }
+    #swiper-prev-setStore {
+        left: -10px;
+    }
+    #swiper-next-setStore {
+        right: -10px;
+    }
+    #service-times {
+        button {
+            font-size: 12px;
+            width: 100%;
+        }
+    }
+    .service-item {
+        label {
+            font-size: 11px;
+            &.disabled {
+                pointer-events: none;
+                opacity: .5;
+            }
+        }
+        input:checked + label {
+            border-color: $borderPrimary !important;
+            background-color: lighten($bgPrimary, 45%);
+            color: $textPrimary;
+            font-weight: bold;
+        }
+    }
+}

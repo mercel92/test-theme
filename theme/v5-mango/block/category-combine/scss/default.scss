@@ -1,0 +1,47 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    .combine-item {
+        .image-wrapper {
+            border-bottom: 2px solid $borderSecondary;
+        }
+        &>.bg-white {
+            border-width: 2px !important;
+        }
+        .combine-detail-card {
+            padding-bottom: 80px;
+            position: relative;
+            .combine-description {
+                @include line-clamp(2);
+                min-height: 32px;
+            }
+            .combine-bottom-line {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+        &:hover { 
+            & > div.border {
+                border-color: $borderPrimary !important;
+            }
+            .image-wrapper {
+                border-color: transparent;
+            }
+        }
+    }
+    .mb-10 {
+        margin-bottom: 10px;
+    }
+    .pb-5 {
+        padding-bottom: 5px;
+    }
+    .fs-12 {
+        font-size: 12px;
+    }
+    @media (max-width: ($xlScreen + 30)) {
+        .slider-block-wrapper {
+            overflow: hidden;
+        }
+    }
+}

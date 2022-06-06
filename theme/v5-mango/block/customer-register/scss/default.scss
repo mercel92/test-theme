@@ -1,0 +1,127 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    #ug-login-tab {
+        @include d-flex;
+        margin-bottom: 30px;
+        border-bottom: 1px solid $borderSecondary;
+        overflow-y: hidden;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar {
+            @include scrollbar(3px, 1px, $bgLight);
+        }
+        &::-webkit-scrollbar-button {
+            display: none;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $bgDarkGray;
+        }
+        li {
+            @include d-flex;
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+            a {
+                color: $textColor;
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 18px;
+                text-transform: uppercase;
+                display: block;
+                padding-top: 6px;
+                padding-bottom: 20px;
+                position: relative;
+                white-space: nowrap;
+            }
+            &.active {
+                a {
+                    color: $textPrimary;
+                    &::before {
+                        content: '';
+                        background-color: $textPrimary;
+                        width: 100%;
+                        height: 3px;
+                        border-top-left-radius: 4px;
+                        border-top-right-radius: 4px;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .nationality-field-wrapper {
+        top: 0;
+        right: 0;
+        z-index: 2;
+        label {
+            font-size: 10px;
+        }
+    }
+    .section-title {
+        padding-top: 6px;
+        padding-bottom: 20px;
+        &::before {
+            content: '';
+            background-color: $textPrimary;
+            width: 74px;
+            height: 3px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    .fb-register-btn {
+        background-color: #47629c;
+        color: #ffffff;
+    }
+    .google-register-btn {
+        color: #3c79e6;
+        border: 1px solid #3c79e6;
+    }
+    .apple-register-btn {
+        color: $textBlack;
+        border: 1px solid $borderBlack;
+    }
+    a[class*="-register-btn"] {
+        font-size: 10px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        i {
+            font-size: 20px;
+            vertical-align: middle;
+        }
+    }
+    &[dir="rtl"] {
+        #ug-login-tab {
+            li {
+                &:not(:last-child) {
+                    margin-right: 0;
+                    margin-left: 20px;
+                }
+                &.active {
+                    a {
+                        &::before {
+                            left: auto;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .nationality-field-wrapper {
+            right: auto;
+            left: 0;
+        }
+        .section-title {
+            &::before {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+}

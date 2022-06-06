@@ -1,0 +1,33 @@
+@include BLOCK {
+    .installment-banks-item {
+        .col-4 {
+            padding: 6px;
+            font-size: 10px;
+            line-height: 16px;
+        }
+        .bank-logo {
+            img {
+                max-height: 40px;
+            }
+        }
+    }
+    .block-title {
+        padding-bottom: 6px;
+        &::after {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        strong {
+            font-size: 13px;
+        }
+    }
+    &[dir="rtl"] {
+        .block-title {
+            &::after {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+}

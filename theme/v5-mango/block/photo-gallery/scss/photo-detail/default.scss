@@ -1,0 +1,21 @@
+@include BLOCK {
+    #photo-detail-content {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .block-title {
+            i {
+                margin-right: 8px;
+            }
+        }
+    }
+    &[dir="rtl"] {
+        #photo-detail-content {
+            .block-title {
+                i {
+                    margin-right: 0;
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+}

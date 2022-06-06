@@ -1,0 +1,14 @@
+@import "setting.scss";
+@include BLOCK {
+    .title{
+        &.active{
+            color: $textPrimary;
+            font-weight: bold;
+        }
+    }
+    .customer-service-item {
+        &:nth-child(2n), &:nth-child(2n) .accordion-body {
+            background: $bgLight;
+        }
+    }
+}

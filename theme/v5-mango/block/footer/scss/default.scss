@@ -1,0 +1,103 @@
+@import "setting.scss";
+@include BLOCK {
+    .mb-8 {
+        margin-bottom: 8px;
+    }
+    .fs-12 {
+        font-size: 12px;
+    }
+    #footer-top {
+        form {
+            .form-control-md {
+                height: 40px;
+            }
+            button[type="submit"] {
+                padding-top: 0;
+                padding-bottom: 0;
+                height: 40px;
+            }
+        }
+    }
+    #footer-social-list {
+        a {
+            width: 40px;
+            height: 40px;
+            display: block;
+        }
+    }
+    #footer-menu {
+        .menu-title {
+            color: $textBlack;
+            font-size: 18px;
+            line-height: 23px;
+        }
+        .menu-title::after {
+            content: '';
+            background-color: $bgPrimary;
+            width: 30px;
+            height: 3px;
+            border-radius: 1.5px;
+            display: block;
+            margin-top: 10px;
+            margin-right: calc(100% - 30px);
+        }
+        .menu-link {
+            color: $textGray;
+            font-size: 14px;
+            line-height: normal;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            display: block;
+            margin: 0;
+        }
+        .menu-link[href]:hover {
+            color: $textPrimary;
+        }
+    }
+    @media (max-width: ($mdScreen - 1)) {
+        #footer-top {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        #footer-social {
+            margin-top: 20px;
+        }
+        #footer-menu {
+            padding-left: 20px;
+            padding-right: 20px;
+            .menu-title {
+                &.active .ti-plus,
+                &:not(.active) .ti-minus {
+                    display: none;
+                }
+                &+.menu-children {
+                    padding-top: $gridPadding / 2;
+                    padding-bottom: $gridPadding;
+                    &:not(.show) {
+                        display: none;
+                    }
+                }
+            }
+        }
+        #footer-security .p-1 img,
+        #footer-banks .p-1 img {
+            width: 100%;
+        }
+        #footer-security .p-1 {
+            width: 50%;
+            flex-basis: 50%;
+        }
+        #footer-banks .p-1 {
+            width: calc(100% / 4);
+            flex-basis: calc(100% / 4);
+        }
+    }
+    &[dir="rtl"] {
+        #footer-menu {
+            .menu-title::after {
+                margin-right: 0;
+                margin-left: calc(100% - 30px);
+            }
+        }
+    }
+}

@@ -1,0 +1,138 @@
+@import "setting";
+@import "mixin";
+@include BLOCK {
+    .filter-card {
+        &:not(:last-child) {
+            border-bottom: 1px solid $borderLight;
+        }
+        .filter-title {
+            margin: 0;
+            font-size: 18px;
+            font-weight: normal;
+            color: $textBlack;
+        }
+        .filter-body {
+            .filter-search {
+                margin-bottom: 10px;
+                &::before {
+                    position: absolute;
+                    right: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 16px;
+                    color: $textGray;
+                }
+            }
+            .filter-list {
+                &::-webkit-scrollbar {
+                    @include scrollbar(2px, 2px, $bgWhite);
+                }
+                &::-webkit-scrollbar-button {
+                    display: none;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: $bgPrimary;
+                }
+                max-height: 230px;
+                overflow-y: auto;
+                .filter-list-item {
+                    &:first-child {
+                        padding-top: 0 !important;
+                    }
+                    padding: 4px 0;
+                }
+            }
+            .filter-list-color {
+                margin-right: -10px;
+                .filter-list-item {
+                    width: 27px;
+                    margin-right: 10px;
+                    margin-bottom: 10px;
+                    .image-wrapper {
+                        padding-bottom: 100% !important;
+                        box-sizing: content-box;
+                    }
+                    .input-checkbox {
+                        position: absolute !important;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        margin: auto !important;
+                    }
+                }
+            }
+            .filter-list-shape {
+                margin-right: -10px;
+                .filter-list-item {
+                    width: 50px;
+                    margin-right: 10px;
+                    .filter-shape {
+                        .image-wrapper {
+                            padding-bottom: 100% !important;
+                            box-sizing: content-box;
+                        }
+                        .shape-name {
+                            font-size: 10px;
+                            margin-top: 10px;
+                            color: #747474;
+                        }
+                        &.shape-checked,
+                        &:hover {
+                            .image-wrapper {
+                                border-color: $textColor !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .filter-item {
+            color: $textGray;
+            margin: 0;
+            font-weight: normal;
+            &:hover {
+                color: $textBlack;
+            }
+        }
+        .filter-category {
+            .filter-title-item {
+                color: $textBlack;
+            }
+        }
+        .selected-item {
+            font-size: 12px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            padding: 5px;
+            i {
+                font-size: 10px;
+            }
+        }
+        .selected-clear-btn {
+            padding: 8px 13px;
+            line-height: 1;
+            font-size: 10px;
+        }
+        [dir="rtl"] & {
+            .filter-body {
+                .filter-search {
+                    &::before {
+                        right: auto;
+                        left: 15px;
+                    }
+                }
+            }
+            .selected-item {
+                margin-right: 0;
+                margin-left: 5px;
+            }
+        }
+    }
+    .price-filter-text {
+        &>span {
+            margin: 0 5px;
+        }
+    }
+
+}

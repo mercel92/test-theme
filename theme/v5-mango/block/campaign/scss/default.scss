@@ -1,0 +1,16 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    .campaing-title {
+        @include line-clamp(1);
+        min-height: 17px;
+        a {
+            color: $textPrimary;
+            text-decoration: underline;
+        }
+    }
+    .campaing-description {
+        @include line-clamp(3);
+        min-height: 50px;
+    }
+}

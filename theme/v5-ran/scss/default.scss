@@ -1,0 +1,76 @@
+/* Grid */
+$gridColumns: 12;
+$gridPadding: 15px;
+$mobileGridPadding: 8px;
+
+/* Breakpoints */
+$xxlScreen: 1400px;
+$xlScreen: 1200px;
+$lgScreen: 992px;
+$mdScreen: 768px;
+$smScreen: 576px;
+
+/* body */
+$bgBody: #ffffff;
+
+/* Background */
+$bgPrimary: #de3737;
+$bgSecondary: #000000;
+$bgWhite: #ffffff;
+$bgBlack: #000000;
+$bgGray:#ececec;
+$bgLight:#f7f7f7;
+$bgDarkGray: #2c2a28;
+$bgSuccess: #28a745;
+$bgInfo: #17a2b8;
+$bgWarning: #ffc107;
+$bgDanger: #dc3545;
+
+/* Border */
+$borderPrimary:#de3737;
+$borderSecondary:#ececec;
+$borderWhite: #ffffff;
+$borderBlack: #000000;
+$borderGray: #8f8f8f;
+$borderLight: #f7f7f7;
+$borderDarkGray: #2c2a28;
+$borderSuccess: #44c61f;
+$borderInfo: #93d8dd;
+$borderWarning: #fcdf27;
+$borderDanger: #ff0000;
+$borderRadius: 4px;
+
+/* Button */
+$buttonPrimary: #de3737;
+$buttonSecondary: #000000;
+$buttonWhite: #ffffff;
+$buttonBlack: #000000;
+$buttonGray:#8f8f8f;
+$buttonLight:#f7f7f7;
+$buttonDarkGray: #2c2a28;
+$buttonSuccess:#28a745;
+$buttonInfo:#17a2b8;
+$buttonWarning:#ffc107;
+$buttonDanger:#dc3545;
+
+/* Font */
+$fontMaster: 'Roboto Condensed', sans-serif;
+$fontText: 'Roboto Condensed', sans-serif;
+$fontH1: 'Roboto Condensed', sans-serif;
+$fontH2: 'Roboto Condensed', sans-serif;
+$fontH3: 'Roboto Condensed', sans-serif;
+$textPrimary: #de3737;
+$textSecondary:#000000;
+$textWhite: #ffffff;
+$textBlack: #000000;
+$textGray: #8f8f8f;
+$textLight: #ececec;
+$textDarkGray: #2c2a28;
+$textSuccess:#28a745;
+$textInfo: #17a2b8;
+$textWarning:#ffc107;
+$textDanger: #dc3545;
+$headingColor:#000000;
+$textColor: #000000;
+
+$borderRadius:0px;

@@ -1,0 +1,12 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    .block-title {
+        font-size: 18px;
+        font-weight: normal;
+    }
+    .captcha-img {
+        padding: 10px;
+        background-color: $bgWhite;
+    }
+}

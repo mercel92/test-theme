@@ -1,0 +1,10 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    .accordion-title {
+        font-size: 15px;
+        @media (min-width:$mdScreen) {
+            font-size: 18px;
+        }
+    }
+}

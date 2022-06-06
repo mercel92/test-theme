@@ -1,0 +1,31 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    .block-sticky {
+        position: sticky;
+        top: 10px;
+    }
+    .accordion-body {
+        a:hover{
+            color: $textPrimary !important;
+        }  
+    }   
+    .video-play {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: $textWhite;
+        font-size: 50px;
+    }
+    .video-title {
+        @include line-clamp(2);
+    }
+    .video-category {
+        @include line-clamp(2);
+    }
+    .video-description {
+        @include line-clamp(3);
+    }
+} 

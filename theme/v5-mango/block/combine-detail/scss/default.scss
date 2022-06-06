@@ -1,0 +1,91 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    .combine-detail-images-wrapper {
+        .combine-detail-images {
+            .swiper-button-prev {
+                left: 8px;
+            }
+            .swiper-button-next {
+                right: 8px;
+            }
+        }
+        .combine-thumb-slider-wrapper {
+            padding: 0 50px;
+            .swiper-button-prev,
+            .swiper-button-next {
+                width: 16px;
+                height: 16px;
+                i[class*="ti-"] {
+                    font-size: 13px;
+                }
+            }
+            .swiper-button-prev {
+                left: 10px;
+            }
+            .swiper-button-next {
+                right: 10px;
+            }
+            .swiper-slide {
+                border: 2px solid transparent;
+                border-radius: $borderRadius;
+                cursor: pointer;
+            }
+            .swiper-slide-thumb-active {
+                border-color: $borderPrimary;
+            }
+        }
+    }
+    .combine-product-list {
+        .combine-product-item {
+            .combine-product-image {
+                width: calc(100% - 20px);
+            }
+            .product-discounted-price:not(.d-none)+.current-price {
+                color: $textPrimary !important;
+            }
+            .qty {
+                input {
+                    height: 35px;
+                }
+            }
+            .add-cart-wrapper {
+                .combine-product-add {
+                    height: 35px;
+                    width: 35px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .qty {
+        max-width: calc(100% - 40px);
+        margin-right: 5px;
+    }
+    .combine-total {
+        font-size: 21px;
+    }
+    .mb-10 {
+        margin-bottom: 10px;
+    }
+    .mb-5 {
+        margin-bottom: 5px;
+    }
+    .variant-wrapper {
+        .sub-select-item {
+            height: 35px;
+            padding-left: 8px;
+            padding-right: 30px;
+            font-size: 12px;
+            .passive {
+                color: $textLight;
+            }
+        }
+    }
+    &[dir="rtl"] {
+        .qty {
+            margin-right: 0;
+            margin-left: 5px;
+        }
+    }
+}

@@ -1,0 +1,196 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    .collect-item {
+        .collect-link {
+            font-size: 16px;
+        }
+        .collect-add {
+            width: 35px;
+            height: 35px;
+            padding: 0;
+            font-size: 14px;
+        }
+        .current-price {
+            font-size: 14px;
+        }
+        .collect-qty {
+            width: 80px;
+            margin-right: 8px;
+                input {
+                    height: 35px;
+                }
+        }
+        .dropdown {
+            .dropdown-title {
+                cursor: pointer;
+                line-height: 1.3;
+                font-size: 14px;
+                .product-title, .brand-title {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    width: calc(100% - 30px);
+                }
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 10px;
+                    left: auto;
+                    margin: auto;
+                    background: #fff;
+                    width: 14px;
+                    height: 14px;
+                    border-width: 2px;
+                    color: $textPrimary;
+                }
+            }
+            &.show {
+                .dropdown-title {
+                    &:before {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+            .dropdown-menu {
+                max-height: 400px;
+                overflow-y: auto;
+                .collect-product-opt {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .pb-8 {
+        padding-bottom: 8px;
+    }
+    .cursor-pointer {
+        cursor: pointer;
+    }
+    .collect-buttons {
+        &>.btn,
+        .dropdown-title {
+            line-height: 1.3;
+            font-size: 12px;
+            cursor: pointer;
+            padding: 6px 12px;
+            display: flex;
+            align-items: center;
+            i {
+                font-size: 20px;
+                margin-right: 5px;
+            }
+        }
+        &>.collect-all-add-cart-btn {
+            font-size: 14px !important;
+            padding: 10px !important;
+            min-width: 170px;
+            justify-content: center;
+        }
+        .share-buttons {
+            a {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &.facebook {
+                    color: #4867aa;
+                }
+                &.twitter {
+                    color: #00aced;
+                }
+                &.linkedin {
+                    color: #0274b3;
+                }
+                &.reddit {
+                    color: #f74300;
+                }
+                &.whatsapp {
+                    color: #1ad03f;
+                }
+                &:hover {
+                    background: #f9f9f9;
+                }
+                i {
+                    font-size: 20px;
+                    margin: 0;
+                }
+            }
+        }
+        &.show .share-buttons {
+            display: flex !important;
+        }
+    }
+    .variant-wrapper {
+        .sub-select-item {
+            height: 38px;
+            padding-left: 8px;
+            padding-right: 30px;
+            font-size: 12px;
+            .passive {
+                color: $textLight;
+            }
+        }
+    }
+    @media (max-width: ($mdScreen - 1)) {
+        &:not([dir="rtl"]) {
+            .collect-buttons {
+                .share-buttons {
+                    left: auto;
+                    right: 0 !important;
+                }
+            }
+        }
+        &[dir="rtl"] {
+            .collect-buttons {
+                .share-buttons {
+                    right: auto;
+                    left: 0 !important;
+                }
+            }
+        }
+    }
+    &[dir="rtl"] {
+        .collect-item {
+            .collect-qty {
+                margin-right: 0;
+                margin-left: 8px;
+            }
+            .dropdown {
+                .dropdown-title {
+                    &::before {
+                        left: 10px;
+                        right: auto;
+                    }
+                }
+            }
+        }
+        .collect-buttons {
+            &>.btn,
+            .dropdown-title {
+                i {
+                    margin-right: 0;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .collect-container {
+        visibility: visible;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        & * {
+            visibility: visible;
+        }
+    }
+}

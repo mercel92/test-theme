@@ -1,0 +1,33 @@
+@import "setting.scss";
+@import "mixin.scss";
+
+@include BLOCK {
+    $bgHopi : #e81e89;
+    #hopi-container {
+        .hopi-logo {
+            max-height: 80px;
+        }
+        .hopi-text {
+            color: $bgHopi;
+        }
+        .btn-hopi {
+            color: $textWhite;
+            background-color: $bgHopi;
+            border-color: $bgHopi;
+            &:hover,
+            &:focus,
+            &.active {
+                background-color: darken($bgHopi, 12%);
+                border-color: darken($bgHopi, 12%);
+            }
+        }
+        input[name="hopiCampaignCode"]:checked + label {
+            border-color: $bgHopi !important;
+        }
+    }
+    @media screen and (max-width: ($mdScreen - 1)) {
+        .hopi-logo {
+            max-height: 40px !important;
+        }
+    }
+}

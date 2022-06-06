@@ -1,0 +1,155 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    h1 {
+        color: $textColor;
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+    .fs-12 {
+        font-size: 12px;
+    }
+    .member-menu-icon {
+        background-color: #d8d8d8;
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 100%;
+    }
+    .page-title-wrapper {
+        top: 0;
+        z-index: 3;
+    }
+    .border-2x {
+        border-width:2px !important;
+    }
+    .message-chat-header {
+        font-size: 12px;
+        button {
+            font-size: inherit;
+            padding: 6px 16px;
+        }
+    }
+    .message-list {
+        .message-item {
+            .ti-chat-alt {
+                font-size: 20px;
+            }
+        }
+    }
+    .message-chat {
+        .message-chat-list {
+            max-height: 380px;
+            overflow-y: auto;
+            .message-chat-item {
+                &.bg-white {
+                    box-shadow: 0 2px 11px -10px rgba(0, 0, 0, 0.5);
+                    &::before{
+                        border-width: 0 0 16px 16px;
+                        left: 100%;
+                        border-color: transparent transparent transparent $bgWhite;
+                    }
+                }
+                &.bg-secondary {
+                    background-color: #dddddd !important;
+                    &::before {
+                        border-width: 0 16px 16px 0;
+                        right: 100%;
+                        border-color: transparent #dddddd transparent transparent;
+                    }
+                }
+                &::before{
+                    content: '';
+                    position:absolute;
+                    top: 10px;
+                    border-style: solid;
+                }
+            }
+        }
+        .message-send {
+            textarea {
+                height: auto;
+                min-height: 40px;
+                padding-right: 150px;
+            }
+            button {
+                position: absolute;
+                top: 5px;
+                bottom: 5px;
+                right: 5px;
+                z-index: 2;
+                width: 90px;
+                font-size: 10px;
+                padding: 2px 5px;
+                i {
+                    font-size: 15px;
+                    line-height: 1;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+    @media (min-width: $mdScreen) {
+        h1 {
+            font-size: 21px;
+        }
+        .message-chat-header {
+            font-size: 13px;
+            button {
+                padding: 8px 20px;
+            }
+        }
+        .message-chat {
+            .message-send {
+                button {
+                    width: 145px;
+                    padding: 2px 8px;
+                    font-size: 12px;
+                    i {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+    &[dir="rtl"] {
+        .member-menu-icon {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+        .message-chat {
+            .message-chat-list {
+                .message-chat-item {
+                    &.bg-white {
+                        &::before{
+                            border-width: 0 16px 16px 0;
+                            right: 100%;
+                            left: auto;
+                            border-color: transparent $bgWhite transparent transparent;
+                        }
+                    }
+                    &.bg-secondary {
+                        background-color: #dddddd !important;
+                        &::before {
+                            border-width: 0 0 16px 16px;
+                            right: auto;
+                            left: 100%;
+                            border-color: transparent transparent transparent #dddddd;
+                        }
+                    }
+                }
+            }
+            .message-send {
+                textarea {
+                    padding-left: 150px;
+                    padding-right: 15px;
+                }
+                button {
+                    right: auto;
+                    left: 5px;
+                }
+            }
+        }
+    }
+}

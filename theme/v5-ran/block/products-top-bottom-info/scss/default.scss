@@ -1,0 +1,6 @@
+@import "setting.scss";
+@include BLOCK {
+    p {
+        color: $textGray;
+    }
+}

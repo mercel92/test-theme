@@ -1,0 +1,74 @@
+/* Grid */
+$gridColumns: 12;
+$gridPadding: 15px;
+$mobileGridPadding: 8px;
+
+/* Breakpoints */
+$xxlScreen: 1400px;
+$xlScreen: 1170px;
+$lgScreen: 992px;
+$mdScreen: 768px;
+$smScreen: 576px;
+
+/* body */
+$bgBody: #ffffff;
+
+/* Background */
+$bgPrimary: #fd6905;
+$bgSecondary: #dddddd;
+$bgWhite: #ffffff;
+$bgBlack: #000000;
+$bgGray: #a0a0a0;
+$bgLight: #f9f9f9;
+$bgDarkGray: #2c2a28;
+$bgSuccess: #44c61f;
+$bgInfo: #93d8dd;
+$bgWarning: #fcdf27;
+$bgDanger: #ff0000;
+
+/* Border */
+$borderPrimary: #fd6905;
+$borderSecondary: #f0f0f0;
+$borderWhite: #ffffff;
+$borderBlack: #000000;
+$borderGray: #dddddd;
+$borderLight: #eaeaea;
+$borderDarkGray: #2c2a28;
+$borderSuccess: #44c61f;
+$borderInfo: #93d8dd;
+$borderWarning: #fcdf27;
+$borderDanger: #ff0000;
+$borderRadius: 4px;
+
+/* Button */
+$buttonPrimary: #fd6905;
+$buttonSecondary: #f0f0f0;
+$buttonWhite: #ffffff;
+$buttonBlack: #000000;
+$buttonGray: #747474;
+$buttonLight: #eaeaea;
+$buttonDarkGray: #2c2a28;
+$buttonSuccess: #44c61f;
+$buttonInfo: #93d8dd;
+$buttonWarning: #fcdf27;
+$buttonDanger: #ff0000;
+
+/* Font */
+$fontMaster: 'Mulish', sans-serif;
+$fontText: 'Mulish', sans-serif;
+$fontH1: 'Mulish', sans-serif;
+$fontH2: 'Mulish', sans-serif;
+$fontH3: 'Mulish', sans-serif;
+$textPrimary: #fd6905;
+$textSecondary: #dddddd;
+$textWhite: #ffffff;
+$textBlack: #000000;
+$textGray: #747474;
+$textLight: #979797;
+$textDarkGray: #2c2a28;
+$textSuccess: #44c61f;
+$textInfo: #93d8dd;
+$textWarning: #fcdf27;
+$textDanger: #ff0000;
+$headingColor: #373738;
+$textColor: #373738;

@@ -1,0 +1,54 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    h1 {
+        color: $textColor;
+        font-size: 21px;
+        margin-bottom: 0;
+    }
+    .member-menu-icon {
+        background-color: #d8d8d8;
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 100%;
+    }
+    .price-alarm-item {
+        font-size: 10px;
+        a.price-alarm-add-btn {
+            font-size: 12px;
+            i {
+                margin-right: 5px;
+            }
+        }
+        a.price-alarm-delete-btn {
+            font-size: 17px;
+        }
+        .mb-10 {
+            margin-bottom: 10px;
+        }
+    }
+    @media (max-width: ($mdScreen - 1)) {
+        .price-alarm-item {
+            font-size: 12px;
+            .mb-10 {
+                margin-bottom: 5px;
+            }
+        }
+    }
+    &[dir="rtl"] {
+        .member-menu-icon {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+        .price-alarm-item {
+            a.price-alarm-add-btn {
+                i {
+                    margin-right: 0;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,205 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    h1 {
+        color: $textColor;
+        font-size: 21px;
+        margin-bottom: 0;
+        small {
+            font-size: 12px;
+            padding-top: 4px;
+        }
+    }
+    .member-menu-icon {
+        background-color: #d8d8d8;
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 100%;
+    }
+    .position-sticky {
+        top: 10;
+    }
+    .order-list {
+        font-size: 12px;
+        .order-item {
+            .order-no {
+                width: 30px;
+                height: 30px;
+            }
+            button.btn-light,
+            a.btn-light {
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 18px;
+                padding: 5px;
+                width: 100%;
+            }
+        }
+    }
+    .order-process {
+        ul>li {
+            color: $textColor;
+            font-size: 12px;
+            padding-bottom: 10px;
+            i {
+                font-size: 24px;
+            }
+            span {
+                font-size: 12px;
+                padding-left: 6px;
+                >small {
+                    font-size: 10px;
+                }
+            }
+            .process-dot {
+                background-color: #d8d8d8;
+                width: 7px;
+                height: 7px;
+                border: 1px solid #FFF;
+                margin-top: -3px;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            &.passed {
+                color: $textSuccess;
+                .process-dot {
+                    background-color: $bgSuccess;
+                }
+                &:not(:last-child)::before {
+                    content: '';
+                    background-color: $bgSuccess;
+                    width: 1px;
+                    height: 6px;
+                    display: block;
+                    position: absolute;
+                    right: 2px;
+                    bottom: 0;
+                    transform: skewX(45deg);
+                }
+            }
+        }
+    }
+    .return-page-form {
+        input[type="checkbox"].form-control + label {
+            background-color: $bgSecondary;
+            padding: 3px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 3;
+            >span {
+                vertical-align: text-bottom;
+            }
+        }
+        .return-count-and-desc {
+            label {
+                font-size: 10px;
+                font-weight: bold;
+            }
+            textarea {
+                height: 40px;
+            }
+        }
+    }
+    @media screen and (min-width: $mdScreen) {
+        .order-item {
+            >div>strong+div {
+                white-space: nowrap;
+            }
+        }
+        .order-product-list {
+            .product-unit {
+                text-align: center;
+            }
+        }
+    }
+    @media screen and (max-width: ($lgScreen - 1)) {
+        .order-item {
+            font-size: 14px;
+            position: relative;
+            .order-mobile-btns {
+                width: 65px;
+                height: 100%;
+                @include d-flex;
+                @include align-items-center;
+                @include flex-direction-column;
+                @include justify-content-center;
+                position: absolute;
+                top: 0;
+                .order-no {
+                    width: 40px;
+                    height: 40px;
+                }
+                a.order-no {
+                    font-size: 24px;
+                    margin-top: 10px;
+                }
+            }
+        }
+        .order-process {
+            ul>li {
+                @include justify-content-center;
+                span {
+                    display: none;
+                }
+                i {
+                    font-size: 20px;
+                }
+            }
+        }
+        &:not([dir="rtl"]) {
+            .order-item {
+                padding-right: 65px;
+                .order-mobile-btns {
+                    padding-left: 0;
+                    padding-right: 8px;
+                    right: 0;
+                }
+            }
+        }
+        &[dir="rtl"] {
+            .order-item {
+                padding-left: 65px;
+                .order-mobile-btns {
+                    padding-right: 0;
+                    padding-left: 8px;
+                    left: 0;
+                }
+            }
+        }
+    }
+    &[dir="rtl"] {
+        .member-menu-icon {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+        .order-process {
+            ul>li {
+                span {
+                    padding-left: 0;
+                    padding-right: 6px;
+                }
+                .process-dot {
+                    left: auto;
+                    right: 50%;
+                    transform: translateX(50%);
+                }
+                &.passed {
+                    &:not(:last-child)::before {
+                        right: auto;
+                        left: 2px;
+                    }
+                }
+            }
+        }
+        .return-page-form {
+            input[type="checkbox"].form-control + label {
+                right: auto;
+                left: 0;
+            }
+        }
+    }
+}

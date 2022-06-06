@@ -1,0 +1,6 @@
+{
+    "xtype": "google",
+    "family" : "Mulish",
+    "category": "sans-serif",
+    "variants" : ["regular"]
+}

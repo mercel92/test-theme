@@ -1,0 +1,13 @@
+@import "setting.scss";
+@include BLOCK {
+    nav {
+        a,
+        span {
+            font-size: 12px;
+            color: $textGray;
+            &:hover {
+                color: $textPrimary;
+            }
+        }
+    }
+}

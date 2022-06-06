@@ -1,0 +1,555 @@
+@import 'setting.scss';
+@import 'mixin.scss';
+@include BLOCK {
+    #order-steps {
+        z-index: 10;
+    }
+    #order-nav {
+        a {
+            height: 45px;
+            padding: 0 10px;
+            font-size: 13px;
+            color: $textGray;
+            span {
+                width: 22px;
+                height: 22px;
+                line-height: 20px;
+                font-size: 12px;
+                margin-right: 10px;
+                text-align: center;
+            }
+            &.active {
+                border-color: $borderPrimary !important;
+                color: $textColor;
+                span {
+                    background-color: $bgPrimary;
+                    border-color: $borderPrimary !important;
+                    color: $textWhite;
+                }
+            }
+            @media (min-width:$mdScreen) {
+                height: 80px;
+                padding: 0 20px;
+                font-size: 16px;
+                span {
+                    width: 30px;
+                    height: 30px;
+                    line-height: 28px;
+                    font-size: 15px;
+                }
+            }
+            [dir="rtl"] & {
+                span {
+                    margin-right: 0;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    .step-title {
+        font-size: 15px;
+    }
+    .address-box {
+        .address-title {
+            font-size: 12px;
+            @media (min-width:$mdScreen) {
+                font-size: 15px;
+            }
+        }
+        .address-btns {
+            .btn {
+                padding: 0;
+                font-size: 11px;
+                i {
+                    margin-right: 5px;
+                    [dir="rtl"] & {
+                        margin-right: 0;
+                        margin-left: 5px;
+                    }
+                }
+                &:hover {
+                    color: $textPrimary !important;
+                }
+                @media (min-width:$mdScreen) {
+                    font-size: 13px;
+                }
+            }
+        }
+        .order-address-selection {
+            .input-checkbox {
+                line-height: 1;
+            }
+            :checked + label {
+                color: $textColor !important;
+            }
+        }
+        &.address-box-add {
+            font-size: 15px;
+            .ti-plus {
+                font-size: 32px;
+                line-height: 1;
+            }
+            &:hover {
+                color: $textPrimary !important;
+            }
+        }
+    }
+    #order-address-form {
+        textarea {
+            height: 80px;
+        }
+    }
+    .order-rightbar-sticky {
+        top: 0;
+    }
+    #order-summary {
+        line-height: 2;
+    }
+    .payment-list-title {
+        font-size: 15px;
+    }
+    .payment-cargo-list {
+        .cargo-options {
+            .cargo-option-item {
+                padding-top: 8px;
+                padding-bottom: 8px;
+                .strong, .cargo-price {
+                    font-size: 15px;
+                }
+                &.active {
+                    border-color: $borderPrimary !important;
+                    strong {
+                        color: $textColor !important;
+                    }
+                }
+            }
+            .cargo-services-item {
+                &.disabled {
+                    cursor: no-drop;
+                    label {
+                        pointer-events: none;
+                        opacity: .5;
+                    }
+                }
+                :checked + label {
+                    border-color: $borderPrimary !important;
+                    .text-gray {
+                        color: $textColor !important;
+                    }
+                }
+            }
+        }
+        .cargo-options-service {
+            overflow-x: auto;
+            .cargo-services-btn {
+                margin: 1px;
+                padding: 8px 16px;
+            }
+        }
+    }
+    .order-agreements-item {
+        label {
+            font-size: 12px;
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .nationality-field-wrapper {
+        top: 0;
+        right: 0;
+        z-index: 2;
+        label {
+            font-size: 10px;
+        }
+    }
+    #order-products {
+        ul.product-list {
+            max-height: 240px;
+            overflow-y: auto;
+            li {
+                .product-name {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .price {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+    .credit-card-wrapper {
+        .card-item {
+            width: 329px;
+            height: 205px;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 5px;
+            .card-item-side {
+                overflow: hidden;
+                transform: perspective(2000px) rotateY(0deg) rotateX(0deg) rotate(0deg);
+                transform-style: preserve-3d;
+                transition: all 0.5s cubic-bezier(0.71, 0.03, 0.56, 0.85);
+                backface-visibility: hidden;
+                height: 100%;
+                &.back {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    transform: perspective(2000px) rotateY(-180deg) rotateX(0deg) rotate(0deg);
+                    z-index: 2;
+                    padding: 0;
+                    height: 100%;
+                }
+            }
+            &.active {
+                .card-item-side {
+                    &.front {
+                        transform: perspective(1000px) rotateY(180deg) rotateX(0deg) rotateZ(0deg);
+                    }
+                    &.back {
+                        transform: perspective(1000px) rotateY(0) rotateX(0deg) rotateZ(0deg);
+                    }
+                }
+            }
+            .card-item-cover {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: -1;
+            }
+            .card-item-wrapper {
+                margin-top: 15px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .card-item-type {
+                width: 75px;
+                height: 40px;
+                img {
+                    width: 65px;
+                    max-width: 100%;
+                    max-height: 75%;
+                    display: block;
+                }
+            }
+            .card-item-number {
+                color: #fff;
+                font-size: 16px;
+                font-weight: 900;
+                letter-spacing: 2px;
+                margin-top: 52px;
+                padding-left: 11px;
+            }
+            .card-item-cvv {
+                color: #000;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 1;
+                text-align: center;
+                width: 65px;
+                height: 35px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%);
+                margin-left: 8px;
+            }
+            .card-item-date {
+                color: #fff;
+                label {
+                    color: inherit;
+                    font-weight: inherit;
+                    margin-bottom: 0;
+                }
+                &Title {
+                    font-size: 8px;
+                    font-weight: 600!important;
+                    &::after {
+                        content: '';
+                        border-top: 4px solid transparent;
+                        border-bottom: 4px solid transparent;
+                        border-left: 4px solid #fff;
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin: 0 5px;
+                    }
+                }
+                strong {
+                    font-size: 16px;
+                    font-weight: 900;
+                    line-height: 0.88;
+                }
+            }
+            .card-item-name {
+                color: #fff;
+                font-size: 14px;
+                line-height: 24px;
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-top: 10px;
+            }
+        }
+    }
+    .card-installment {
+        &-header {
+            font-size: 10px;
+            line-height: 16px;
+        }
+        &-item {
+            font-size: 10px;
+            &>.col-4 {
+                padding-top: 8px;
+                padding-bottom: 8px;
+                height: 100%;
+                @include d-flex;
+                @include align-items-center;
+                &:last-child {
+                    @include justify-content-flex-end;
+                }
+                &:not(:first-child):not(:last-child) {
+                    @include justify-content-center;
+                }
+            }
+            label {
+                font-size: inherit;
+                font-weight: inherit;
+                white-space: nowrap;
+            }
+        }
+        .card-installment-item:nth-child(2n) {
+            background-color: $bgLight;
+        }
+    }
+    .payment-list-item {
+        .accordion-title {
+            color: $textGray;
+            font-size: 15px;
+            .input-checkbox {
+                width: 14px;
+                height: 14px;
+                border: 1px solid $borderLight;
+                text-align: center;
+                line-height: 10px;
+                .ti-check {
+                    font-size: 8px;
+                    opacity: 0;
+                }
+            }
+        }
+        .check-list-item {
+            label {
+                font-size: 14px;
+            }
+            :checked + label {
+                border-color: $borderPrimary !important;
+                color: $textColor !important;
+            }
+        }
+        &.active {
+            border-color: $borderPrimary !important;
+            .accordion-title {
+                color: $textColor;
+                .input-checkbox {
+                    border-color: $borderPrimary;
+                    .ti-check {
+                        color: $textPrimary;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    .installment-popup {
+        padding: 2px 5px !important;
+        font-size: 12px;
+    }
+    #masterpass-card-list,
+    #card-storage-list,
+    #credit-cart-form,
+    #card-secured-3d,
+    #card-cardstorage,
+    #masterpass-save-panel,
+    #have-masterpass-global-account {
+        font-size: 12px;
+        font-weight: normal;
+        label {
+            font-size: 12px;
+        }
+        .masterpass-logo {
+            height: 25px;
+        }
+    }
+    #approve-step {
+        .approve-title {
+            font-size: 21px;
+        }
+        .approve-description {
+            * {
+                color: $textGray;
+                font-weight: normal;
+            }
+            a, strong {
+                color: $textColor;
+            }
+        }
+    }
+    .popover-item {
+        font-size: 12px;
+    }
+    .mb-8 {
+        margin-bottom: 8px;
+    }
+    .invoice-check {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+    .eExport-select {
+        position: relative;
+        z-index: 12;
+    }
+    .eExport-btn {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 13;
+    }
+    .eExport-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        z-index: 11;
+        opacity: .9;
+    }
+    @media (max-width: ($smScreen - 1)) {
+        .payment-button-container {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 100;
+            padding: $mobileGridPadding;
+            border-top: 1px solid $borderLight;
+        }
+        .order-price-btn:before {
+            content: '';
+            width: 0px;
+            height: 0px;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 4px solid $textColor;
+            margin-right: $mobileGridPadding;
+        }
+        #order-steps {
+            margin-bottom: 70px;
+        }
+        .address-tab {
+            button {
+                font-size: 10px;
+                padding: 10px 5px;
+            }
+        }
+        .payment-cargo-services {
+            .cargo-services-title {
+                button {
+                    font-size: 10px;
+                    line-height: 1.2;
+                }
+            }
+        }
+    }
+    &[dir="rtl"] {
+        .payment-cargo-services {
+            .cargo-services-title {
+                margin-right: 0;
+                margin-left: 1px;
+            }
+        }
+        .nationality-field-wrapper {
+            right: auto;
+            left: 0;
+        }
+        .credit-card-wrapper {
+            .card-item {
+                left: auto;
+                right: 50%;
+                transform: translateX(50%);
+                .card-item-number {
+                    padding-left: 0;
+                    padding-right: 11px;
+                }
+                .card-item-cvv {
+                    left: auto;
+                    right: 50%;
+                    transform: translateY(50%);
+                    margin-left: 0;
+                    margin-right: 8px;
+                }
+                .card-item-date {
+                    &Title {
+                        &::after {
+                            border-left: 0;
+                            border-right: 4px solid #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+label {
+    font-weight: normal !important;
+}
+
+.otp-logo,
+#order-chippin-form {
+    img {
+        height: 55px;
+    }
+}
+
+.otp-text {
+    font-size: 16px;
+}
+
+
+#iyzipay-checkout-form-cover,
+#paytr-checkout-form-cover {
+    background: rgb(255 255 255 / 90%) !important;
+    opacity: 1 !important;
+    font-size: 14px !important;
+    text-align: center;
+    color: $textColor !important;
+    height: 100% !important;
+    bottom: 0 !important;
+    padding: $gridPadding !important;
+}
+
+body .css-1s7yuit-Sandbox {
+    background: transparent !important;
+}
+
+.scroll-to-up {
+    display: none !important;
+}
+
+.GenelButon {
+    padding: 0;
+    float: none !important;
+}

@@ -1,0 +1,28 @@
+@import "setting.scss";
+@include BLOCK {
+    .breadcrumb {
+        li {
+            a {
+                color: $textGray;
+            }
+            &:last-child {
+                a {
+                    color: $textBlack;
+                }
+            }
+            i {
+                color: $textGray;
+                margin-right: 10px;
+                &:not(.ti-location) {
+                    margin-left: 10px;
+                }
+                [dir="rtl"] & {
+                     &.ti-location {
+                        margin-right: 0;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

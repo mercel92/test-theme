@@ -1,0 +1,8 @@
+@import "setting.scss";
+@import "mixin.scss";
+@include BLOCK {
+    .guest-book-icon {
+        font-size: 140px;
+        line-height: 1;
+    }
+}
